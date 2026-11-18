@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Видео из ваших фото и видео — монтаж на заказ</title>
+  <meta name="description" content="Соберём ролик из ваших фото и видео: музыка, переходы, цветокоррекция. От 200 грн.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="logo" href="#top">🎬 <span data-brand>Видеомонтаж</span></a>
+    <button class="burger" id="burger" aria-label="Меню">☰</button>
+    <div class="links" id="links">
+      <a href="#services">Услуги</a>
+      <a href="#how">Как это работает</a>
+      <a href="#price">Цены</a>
+      <a href="#faq">Вопросы</a>
+      <a class="btn small" href="#order">Заказать</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <h1>Ваши фото и видео превратим в кино</h1>
+    <p>Свадьба, юбилей, день рождения, выпускной или просто важная дата. Вы присылаете материалы, мы собираем ролик с музыкой и переходами.</p>
+    <a class="btn" href="#calc">Рассчитать стоимость</a>
+  </header>
+
+  <section id="services">
+    <h2>Что мы делаем</h2>
+    <div class="grid">
+      <div class="card"><h3>Динамичный монтаж</h3><p>Фото и видео в одном ролике с плавными переходами.</p></div>
+      <div class="card"><h3>Музыка под настроение</h3><p>Подбираем трек и ставим кадры в ритм.</p></div>
+      <div class="card"><h3>Улучшение качества</h3><p>Убираем дрожание и шум, подтягиваем цвет и светлость.</p></div>
+      <div class="card"><h3>Любой формат</h3><p>Горизонтальный для экрана, вертикальный для Reels и Stories.</p></div>
+      <div class="card"><h3>Правки включены</h3><p>До 2 раундов правок бесплатно.</p></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>Как это работает</h2>
+    <ol class="steps">
+      <li>Оставляете заявку и присылаете материалы: ссылкой на облако, в мессенджер или флешкой.</li>
+      <li>Согласовываем идею, длительность и музыку.</li>
+      <li>Через 3–5 дней получаете готовый ролик в HD или 4K.</li>
+    </ol>
+  </section>
+
+  <section id="price">
+    <h2>Стоимость</h2>
+    <div class="prices">
+      <div class="price"><h3>До 3 минут</h3><div class="amount" data-price="short"></div></div>
+      <div class="price featured"><h3>До 10 минут</h3><div class="amount" data-price="long"></div></div>
+      <div class="price"><h3>Срочно (24 часа)</h3><div class="amount">+<span data-rush></span>%</div></div>
+    </div>
+  </section>
+
+  <section id="calc">
+    <h2>Калькулятор</h2>
+    <div class="box">
+      <label>Длительность ролика: <b id="minVal">3</b> мин</label>
+      <input type="range" id="minutes" min="1" max="10" value="3">
+      <label class="check"><input type="checkbox" id="rush"> Срочно (за 24 часа)</label>
+      <div class="total">Итого: <span id="total">200 грн</span></div>
+      <a class="btn" href="#order">Оформить заказ</a>
+    </div>
+  </section>
+
+  <section id="order">
+    <h2>Оставить заявку</h2>
+    <form class="box" id="form" novalidate>
+      <label>Ваше имя<input name="name" required placeholder="Как к вам обращаться"></label>
+      <label>Контакт<input name="contact" required placeholder="Телефон или @username"></label>
+      <label>Повод
+        <select name="event">
+          <option>Свадьба</option><option>День рождения</option><option>Юбилей</option>
+          <option>Выпускной</option><option>Семейный архив</option><option>Другое</option>
+        </select>
+      </label>
+      <label>Ссылка на материалы (Google Drive, Dropbox и т.п.)<input name="link" placeholder="https://..."></label>
+      <label>Пожелания<textarea name="comment" rows="3" placeholder="Музыка, стиль, что важно показать"></textarea></label>
+      <p class="hint">Расчёт: <b id="formPrice"></b></p>
+      <div class="actions">
+        <button type="submit" class="btn" data-via="formspree">Отправить заявку</button>
+        <button type="submit" class="btn ghost" data-via="telegram">Написать в Telegram</button>
+      </div>
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
+      <p class="error" id="error" hidden></p>
+      <p class="success" id="success" hidden>✅ Заявка отправлена! Мы свяжемся с вами в ближайшее время.</p>
+    </form>
+  </section>
+
+  <section id="faq">
+    <h2>Частые вопросы</h2>
+    <div class="faq">
+      <details><summary>Сколько фото и видео нужно?</summary><p>Сколько есть. Мы отберём лучшие кадры под выбранную длительность.</p></details>
+      <details><summary>Можно выбрать свою музыку?</summary><p>Да, пришлите название трека или файл. Если не пришлёте, подберём сами.</p></details>
+      <details><summary>Как оплатить?</summary><p>Способ и условия согласуем в переписке после оценки материала.</p></details>
+      <details><summary>Что если мне не понравится?</summary><p>Внесём до 2 раундов правок бесплатно.</p></details>
+    </div>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> <span data-brand></span></p>
+    <p><a id="tgLink" href="#">Telegram</a> · <a id="phoneLink" href="#"></a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
