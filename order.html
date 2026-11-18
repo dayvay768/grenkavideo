@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Замовити відео</title>
+  <meta name="description" content="Залиште заявку на монтаж відео — надішлемо в Telegram або Viber.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header"></div>
+
+<header class="hero small"><h1>Замовити ролик</h1><p>Заповніть форму й надішліть заявку в Telegram або Viber. Або просто зателефонуйте.</p></header>
+<section>
+  <form class="box" id="form" novalidate onsubmit="return false">
+    <label>Ваше імʼя<input name="name" placeholder="Як до вас звертатися"></label>
+    <label>Ваш контакт<input name="contact" placeholder="Телефон або @username"></label>
+    <label>Привід
+      <select name="event"><option>Весілля</option><option>День народження</option><option>Ювілей</option><option>Випускний</option><option>Сімейний архів</option><option>Інше</option></select>
+    </label>
+    <label>Тривалість: <b><span id="minVal">3</span> хв</b></label>
+    <input type="range" id="minutes" min="1" max="20" value="3">
+    <label class="check"><input type="checkbox" id="rush"> Терміново (за 24 години)</label>
+    <div class="total">Разом: <span id="total"></span></div>
+    <label>Посилання на матеріали (Google Drive, Dropbox тощо)<input name="link" placeholder="https://..."></label>
+    <label>Побажання<textarea name="comment" rows="3" placeholder="Музика, стиль, що важливо показати"></textarea></label>
+    <div class="row">
+      <button type="button" class="btn tg" id="sendTg">✈️ У Telegram</button>
+      <button type="button" class="btn vb" id="sendViber">💜 У Viber</button>
+      <button type="button" class="btn ghost" id="copyBtn">📋 Копіювати</button>
+    </div>
+    <p class="error" id="error" hidden></p>
+    <p class="success" id="success" hidden></p>
+    <p style="text-align:center">Або зателефонуйте: <a data-tel><b data-phone-text></b></a></p>
+  </form>
+</section>
+<div id="footer"></div>
+<script src="script.js"></script>
+</body>
+</html>

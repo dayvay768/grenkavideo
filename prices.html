@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ціни — відеомонтаж</title>
+  <meta name="description" content="До 3 хв — 200 грн, до 5 хв — 450 грн, до 10 хв — 800 грн. Терміново +45%.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header"></div>
+
+<header class="hero small"><h1>Ціни</h1><p>Зрозуміла вартість без прихованих платежів.</p></header>
+<section>
+  <div class="grid">
+    <div class="price"><h3>До 3 хвилин</h3><div class="amount" data-price3></div><p>Монтаж, музика, переходи</p></div>
+    <div class="price"><h3>До 5 хвилин</h3><div class="amount" data-price5></div><p>Монтаж, музика, переходи</p></div>
+    <div class="price featured"><h3>До 10 хвилин</h3><div class="amount" data-price10></div><p>Розширений монтаж, музика</p></div>
+    <div class="price"><h3>Терміново</h3><div class="amount">+<span data-rush></span>%</div><p>Готовність за 24 години</p></div>
+  </div>
+  <p style="text-align:center;margin-top:20px">Кожна додаткова хвилина понад 10 хв — <b data-extra></b></p>
+</section>
+<section>
+  <h2>Калькулятор</h2>
+  <div class="box">
+    <label>Тривалість ролика: <b><span id="minVal">3</span> хв</b></label>
+    <input type="range" id="minutes" min="1" max="20" value="3">
+    <label class="check"><input type="checkbox" id="rush"> Терміново (за 24 години)</label>
+    <div class="total">Разом: <span id="total"></span></div>
+    <a class="btn" href="order.html">Замовити</a>
+  </div>
+</section>
+<div id="footer"></div>
+<script src="script.js"></script>
+</body>
+</html>
